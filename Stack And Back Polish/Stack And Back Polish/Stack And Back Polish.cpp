@@ -2,7 +2,6 @@
 
 using namespace std;
 
-#include <iomanip>
 
 template <typename T>
 class Stack
