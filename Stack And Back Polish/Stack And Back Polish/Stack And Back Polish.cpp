@@ -26,7 +26,7 @@ Stack<T>::Stack(int s)
 {
 	size = s;   
 	stackPtr = new T[size]; 
-	top = -1; 
+	top = -1;
 }
 
 template <typename T>

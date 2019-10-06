@@ -159,6 +159,8 @@ T& List<T>::operator[](const int index)
 		}
 		current = current->pNext;
 		counter++;
+
+
 	}
 
 
@@ -176,7 +178,7 @@ int main()
 	lst.push_front(11);
 	lst.pop_front();
 	lst.pop_back();
-	lst.clear();
+	//lst.clear();
 	
 
 	for (int i = 0; i < lst.GetSize(); i++) {
