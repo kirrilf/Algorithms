@@ -226,7 +226,7 @@ void timSort(int* mas, int sizeMas) {
 int main()
 {
 	
-	int size = 100000;
+	int size = 10000;
 	int* mas = new int[size];
 
 	for (int i = 0; i < size; i++) {
