@@ -144,14 +144,16 @@ void timSort(int* mas, int sizeMas) {
 		if ((finishPoint - startPoint) < minRun) {
 			if (finishPoint + minRun > sizeMas) {
 				finishPoint = sizeMas;
+				insertionSort(mas, sizeMas, startPoint, finishPoint);
 			}
 			else {
 				finishPoint += minRun-(finishPoint-startPoint);
+				insertionSort(mas, sizeMas, startPoint, finishPoint);
 			}
 			
 		}
 		
-		insertionSort(mas, sizeMas, startPoint, finishPoint);
+		
 
 		stackForMerge.push({ startPoint, finishPoint});
 
@@ -213,7 +215,198 @@ void timSort(int* mas, int sizeMas) {
 
 
 
+void tests() {
 
+	int size1 = 1000;
+	int size2 = 100000;
+	int size3 = 1000000;
+	int* mas1 = new int[size1];
+	int* mas2 = new int[size2];
+	int* mas3 = new int[size3];
+	for (int i = 0; i < size1; i++) {
+		mas1[i] = (rand() % 20000) - 10000;
+	}
+	for (int i = 0; i < size2; i++) {
+		mas2[i] = (rand() % 20000) - 10000;
+	}
+	for (int i = 0; i < size3; i++) {
+		mas3[i] = (rand() % 20000) - 10000;
+	}
+
+	int start = clock();
+	timSort(mas1, size1);
+	int end = clock();
+	for (int i = 1; i < size1; i++) {
+		if (mas1[i] < mas1[i - 1]) {
+			cout << "ERROR";
+			system("pause");
+		}
+	}
+	cout << "Time for 1000 random elements: " <<end - start << endl;
+	
+
+
+	start = clock();
+	timSort(mas2, size2);
+	end = clock();
+	for (int i = 1; i < size2; i++) {
+		if (mas2[i] < mas2[i - 1]) {
+			cout << "ERROR";
+			system("pause");
+		}
+	}
+	cout <<"Time for 100k random elements: " <<  end - start << endl;
+
+	start = clock();
+	timSort(mas3, size3);
+	end = clock();
+	for (int i = 1; i < size3; i++) {
+		if (mas3[i] < mas3[i - 1]) {
+			cout << "ERROR";
+			system("pause");
+		}
+	}
+	cout << "Time for 1M random elements: " << end - start << endl;
+
+	for (int i = 0; i < size1; i++) {
+		if (i < 100) {
+			mas1[i] = i;
+		}
+		else if (i < 200) {
+			mas1[i] = i - 100;
+		}
+		else if (i < 300) {
+			mas1[i] = rand() % 100 + 1;
+		}
+		else if (i < 400) {
+			mas1[i] = i;
+		}
+		else if (i < 500) {
+			mas1[i] = i - 54;
+		}
+		else if (i < 600) {
+			mas1[i] = i;
+		}
+		else if (i < 700) {
+			mas1[i] = rand() % 10 + 1;
+		}
+		else if (i < 800) {
+			mas1[i] = i - 1000;
+		}
+		else if (i < 900) {
+			mas1[i] = i;
+		}
+		else if (i < 1000) {
+			mas1[i] = i - 20000;
+		}
+	}
+
+	for (int i = 0; i < size2; i++) {
+		if (i < 10000) {
+			mas2[i] = i;
+		}
+		else if (i < 20000) {
+			mas2[i] = i - 100;
+		}
+		else if (i < 30000) {
+			mas2[i] = rand() % 100 + 1;
+		}
+		else if (i < 40000) {
+			mas2[i] = i;
+		}
+		else if (i < 50000) {
+			mas2[i] = i - 54;
+		}
+		else if (i < 60000) {
+			mas2[i] = i;
+		}
+		else if (i < 70000) {
+			mas2[i] = rand() % 10 + 1;
+		}
+		else if (i < 80000) {
+			mas2[i] = i - 1000;
+		}
+		else if (i < 90000) {
+			mas2[i] = i;
+		}
+		else if (i < 100000) {
+			mas2[i] = i - 20000;
+		}
+	}
+
+	for (int i = 0; i < size3; i++) {
+		if (i < 100000) {
+			mas3[i] = i;
+		}
+		else if (i < 200000) {
+			mas3[i] = i - 100;
+		}
+		else if (i < 300000) {
+			mas3[i] = rand() % 100 + 1;
+		}
+		else if (i < 400000) {
+			mas3[i] = i;
+		}
+		else if (i < 500000) {
+			mas3[i] = i - 54;
+		}
+		else if (i < 600000) {
+			mas3[i] = i;
+		}
+		else if (i < 700000) {
+			mas3[i] = rand() % 10 + 1;
+		}
+		else if (i < 800000) {
+			mas3[i] = i - 1000;
+		}
+		else if (i < 900000) {
+			mas3[i] = i;
+		}
+		else if (i < 1000000) {
+			mas3[i] = i - 20000;
+		}
+	}
+
+	start = clock();
+	timSort(mas1, size1);
+	end = clock();
+	for (int i = 1; i < size1; i++) {
+		if (mas1[i] < mas1[i - 1]) {
+			cout << "ERROR";
+			system("pause");
+		}
+	}
+	cout << "Time for 1000 elements: " << end - start << endl;
+
+	start = clock();
+	timSort(mas2, size2);
+	end = clock();
+	for (int i = 1; i < size2; i++) {
+		if (mas2[i] < mas2[i - 1]) {
+			cout << "ERROR";
+			system("pause");
+		}
+	}
+	cout << "Time for 100k elements: " << end - start << endl;
+
+	start = clock();
+	timSort(mas3, size3);
+	end = clock();
+	for (int i = 1; i < size3; i++) {
+		if (mas3[i] < mas3[i - 1]) {
+			cout << "ERROR";
+			system("pause");
+		}
+	}
+	cout << "Time for 1M elements: " << end - start << endl;
+
+
+	
+	delete[] mas1;
+	delete[] mas2;
+	delete[] mas3;
+	
+}
 
 
 
@@ -225,27 +418,8 @@ void timSort(int* mas, int sizeMas) {
 
 int main()
 {
-	
-	int size = 100000;
-	int* mas = new int[size];
 
-	for (int i = 0; i < size; i++) {
-		mas[i] = rand() % 100 + 1;
-	}
-
-	
-	timSort(mas, size);
-
-
-	for (int i = 1; i < size; i++) {
-		if (mas[i] < mas[i - 1]) {
-			system("pause");
-		}
-	}
-
-
-	delete[] mas;
-
+	tests();
 
 	
 
