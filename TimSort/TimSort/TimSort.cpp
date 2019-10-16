@@ -402,19 +402,15 @@ void tests() {
 
 
 	
-<<<<<<< HEAD
+
 	delete[] mas1;
 	delete[] mas2;
 	delete[] mas3;
 	
 }
 
-=======
-	int size = 10000;
-	int* mas = new int[size];
->>>>>>> ede5d0e6734ee6c7fb2cfcfaf5da7cd32bd031fe
 
-
+	
 
 
 
