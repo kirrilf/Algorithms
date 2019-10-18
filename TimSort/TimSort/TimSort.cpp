@@ -242,7 +242,7 @@ void tests() {
 			system("pause");
 		}
 	}
-	cout << "Time for 1000 random elements: " <<end - start << endl;
+	cout << "Bad case(1000): " <<end - start << endl;
 	
 
 
@@ -255,7 +255,7 @@ void tests() {
 			system("pause");
 		}
 	}
-	cout <<"Time for 100k random elements: " <<  end - start << endl;
+	cout <<"Bad case(100k): " <<  end - start << endl;
 
 	start = clock();
 	timSort(mas3, size3);
@@ -266,7 +266,7 @@ void tests() {
 			system("pause");
 		}
 	}
-	cout << "Time for 1M random elements: " << end - start << endl;
+	cout << "Bad case(1M): " << end - start << endl;
 
 	for (int i = 0; i < size1; i++) {
 		if (i < 100) {
@@ -376,7 +376,7 @@ void tests() {
 			system("pause");
 		}
 	}
-	cout << "Time for 1000 elements: " << end - start << endl;
+	cout << "Good case(1000): " << end - start << endl;
 
 	start = clock();
 	timSort(mas2, size2);
@@ -387,7 +387,7 @@ void tests() {
 			system("pause");
 		}
 	}
-	cout << "Time for 100k elements: " << end - start << endl;
+	cout << "TGood case(100k): " << end - start << endl;
 
 	start = clock();
 	timSort(mas3, size3);
@@ -398,7 +398,7 @@ void tests() {
 			system("pause");
 		}
 	}
-	cout << "Time for 1M elements: " << end - start << endl;
+	cout << "Good case(1M): " << end - start << endl;
 
 
 	
