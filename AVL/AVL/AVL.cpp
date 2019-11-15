@@ -26,7 +26,7 @@ private:
 		return calculateHeight(tempNode->right) - calculateHeight(tempNode->left);
 	}
 
-	node* rotateright(node* tempNode) 
+	node* turnRight(node* tempNode) 
 	{
 		node* tempNodeQ = tempNode->left;
 		tempNode->left = tempNode->right;
@@ -72,14 +72,14 @@ private:
 		if (differenceHeight(tempNode) == 2)
 		{
 			if (differenceHeight(tempNode->right) < 0)
-				tempNode->right = rotateright(tempNode->right);
+				tempNode->right = turnRight(tempNode->right);
 			return turnLeft(tempNode);
 		}
 		if (differenceHeight(tempNode) == -2)
 		{
 			if (differenceHeight(tempNode->left) > 0)
 				tempNode->left = turnLeft(tempNode->left);
-			return rotateright(tempNode);
+			return turnRight(tempNode);
 		}
 		return tempNode; 
 	}
