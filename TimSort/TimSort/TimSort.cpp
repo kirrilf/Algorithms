@@ -242,8 +242,13 @@ void tests() {
 			system("pause");
 		}
 	}
+<<<<<<< HEAD
 	cout << "Bad case(1000): " << end - start << endl;
 
+=======
+	cout << "Bad case(1000): " <<end - start << endl;
+	
+>>>>>>> dcec4f86a03c7f2250f933a896721526f5180251
 
 
 	start = clock();
@@ -255,7 +260,11 @@ void tests() {
 			system("pause");
 		}
 	}
+<<<<<<< HEAD
 	cout << "Bad case(100k): " << end - start << endl;
+=======
+	cout <<"Bad case(100k): " <<  end - start << endl;
+>>>>>>> dcec4f86a03c7f2250f933a896721526f5180251
 
 	/*start = clock();
 	timSort(mas3, size3);
@@ -267,7 +276,11 @@ void tests() {
 		}
 	}
 	cout << "Bad case(1M): " << end - start << endl;
+<<<<<<< HEAD
 	*/
+=======
+
+>>>>>>> dcec4f86a03c7f2250f933a896721526f5180251
 	for (int i = 0; i < size1; i++) {
 		if (i < 100) {
 			mas1[i] = i;
