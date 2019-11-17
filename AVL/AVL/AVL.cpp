@@ -4,20 +4,17 @@ using namespace std;
 
 
 
-
-
-
-
+template <typename T>
 class Tree {
 private:
 
 	struct node
 	{
-		int key;
+		T key;
 		unsigned char height;
 		node* left;
 		node* right;
-		node(int k) { key = k; left = right = 0; height = 1; }
+		node(T k) { key = k; left = right = 0; height = 1; }
 	};
 
 	node* root;
@@ -54,7 +51,7 @@ private:
 	}
 
 	void countingHeight(node* tempNode) {
-		int rightHeight = calculateHeight(tempNode->right), leftHeight = calculateHeight(tempNode->left);
+		T rightHeight = calculateHeight(tempNode->right), leftHeight = calculateHeight(tempNode->left);
 
 		if (rightHeight > leftHeight) {
 			tempNode->height = rightHeight+1;
@@ -84,7 +81,7 @@ private:
 		return tempNode; 
 	}
 
-	node* pushNode(int key, node* tempNode) {
+	node* pushNode(T key, node* tempNode) {
 		if (!tempNode) {
 			node* temp = new node(key);
 			return temp;
@@ -125,7 +122,7 @@ private:
 		return balance(tempNode);
 	}
 
-	node* del(node* tempNode, int key) 
+	node* del(node* tempNode, T key) 
 	{
 		if (!tempNode) return 0;
 		if (key < tempNode->key)
@@ -146,7 +143,7 @@ private:
 		return balance(tempNode);
 	}
 
-	bool chekElem(node* tempNode, int key) {
+	bool chekElem(node* tempNode, T key) {
 		if (tempNode->key == key) {
 			return true;
 		}
@@ -159,13 +156,13 @@ private:
 		
 	}
 
-	void printTree(node* tempNode, int level)
+	void printTree(node* tempNode, T level)
 	{
 		if (tempNode)
 		{
 			printTree(tempNode->right, level + 1);
 
-			for (int i = 0; i < level; i++){ 
+			for (T i = 0; i < level; i++){ 
 				cout << "   ";
 			}
 			cout << tempNode->key << endl;
@@ -175,17 +172,14 @@ private:
 	}
 	
 
-
-
-
 public:
 
 	Tree() {
 		root = 0;
 	}
-	
-	
-	void push(int key) {
+	~Tree() {}
+
+	void push(T key) {
 		root = pushNode(key, root);	
 	}
 
@@ -193,7 +187,7 @@ public:
 		showVAL(root);
 	}
 
-	void pop(int key) {
+	void pop(T key) {
 		if (key = root->key) {
 			root = del(root, key);
 		}
@@ -202,7 +196,7 @@ public:
 		}
 	}
 
-	bool empty(int key) {
+	bool empty(T key) {
 		if (chekElem(root, key) == 1) {
 			return true;
 		}
@@ -244,7 +238,7 @@ public:
 
 int main()
 {
-	Tree tree;
+	Tree<int> tree;
 	tree.push(15);
 	tree.push(16);
 	tree.push(17);
