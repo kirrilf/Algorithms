@@ -156,13 +156,13 @@ private:
 		
 	}
 
-	void printTree(node* tempNode, T level)
+	void printTree(node* tempNode, int level)
 	{
 		if (tempNode)
 		{
 			printTree(tempNode->right, level + 1);
 
-			for (T i = 0; i < level; i++){ 
+			for (int i = 0; i < level; i++){ 
 				cout << "   ";
 			}
 			cout << tempNode->key << endl;
@@ -250,20 +250,21 @@ int main()
 	tree.push(22);
 	tree.push(23);
 	tree.push(24);
-	tree.push(25);
+	/*tree.push(25);
 	tree.push(26);
 	tree.push(27);
 	tree.push(28);
 	tree.push(29);
-	tree.push(30);
+	tree.push(30);*/
 	tree.show();
 	cout << endl;
-	tree.pop(16);
+	//tree.pop(16);
 	tree.show();
 	cout << endl;
 	cout << tree.empty(16);
 	cout << endl;
 	cout << tree.empty(21);
+	cout << endl;
 	tree.showAVL();
 
 
