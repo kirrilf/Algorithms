@@ -1,10 +1,10 @@
 ﻿  Kraskal.cpp
-F:\Algorithms\Kraskal\Kraskal\Kraskal.cpp(104,20): warning C4018:  <: несоответствие типов со знаком и без знака
-F:\Algorithms\Kraskal\Kraskal\Kraskal.cpp(112,20): warning C4018:  <: несоответствие типов со знаком и без знака
-F:\Algorithms\Kraskal\Kraskal\Kraskal.cpp(124,20): warning C4018:  <: несоответствие типов со знаком и без знака
-F:\Algorithms\Kraskal\Kraskal\Kraskal.cpp(132,20): warning C4018:  <: несоответствие типов со знаком и без знака
-F:\Algorithms\Kraskal\Kraskal\Kraskal.cpp(133,23): warning C4018:  <: несоответствие типов со знаком и без знака
-F:\Algorithms\Kraskal\Kraskal\Kraskal.cpp(134,22): warning C4018:  <: несоответствие типов со знаком и без знака
-F:\Algorithms\Kraskal\Kraskal\Kraskal.cpp(156,20): warning C4018:  <: несоответствие типов со знаком и без знака
-F:\Algorithms\Kraskal\Kraskal\Kraskal.cpp(177,21): warning C4018:  <: несоответствие типов со знаком и без знака
+F:\Algorithms\Kraskal\Kraskal\Kraskal.cpp(99,20): warning C4018:  <: несоответствие типов со знаком и без знака
+F:\Algorithms\Kraskal\Kraskal\Kraskal.cpp(107,20): warning C4018:  <: несоответствие типов со знаком и без знака
+F:\Algorithms\Kraskal\Kraskal\Kraskal.cpp(119,20): warning C4018:  <: несоответствие типов со знаком и без знака
+F:\Algorithms\Kraskal\Kraskal\Kraskal.cpp(127,20): warning C4018:  <: несоответствие типов со знаком и без знака
+F:\Algorithms\Kraskal\Kraskal\Kraskal.cpp(128,23): warning C4018:  <: несоответствие типов со знаком и без знака
+F:\Algorithms\Kraskal\Kraskal\Kraskal.cpp(129,22): warning C4018:  <: несоответствие типов со знаком и без знака
+F:\Algorithms\Kraskal\Kraskal\Kraskal.cpp(148,20): warning C4018:  <: несоответствие типов со знаком и без знака
+F:\Algorithms\Kraskal\Kraskal\Kraskal.cpp(169,20): warning C4018:  <: несоответствие типов со знаком и без знака
   Kraskal.vcxproj -> F:\Algorithms\Kraskal\Debug\Kraskal.exe

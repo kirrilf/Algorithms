@@ -1,11 +1,7 @@
-﻿// Kraskal.cpp : Этот файл содержит функцию "main". Здесь начинается и заканчивается выполнение программы.
-//
-
+﻿
 #include <iostream>
 #include <vector>
 #include <string>
-#include <algorithm>
-#include <set>
 #include <map>
 #include <sstream>
 
@@ -70,7 +66,6 @@ void input(vector <node> &graf) {
 	istringstream input(str);
 	vector<string> result;
 	
-	// extract substrings one-by-one
 	while (!input.eof()) {
 		std::string substring;
 		input >> substring;
@@ -139,17 +134,14 @@ void cheak(vector<vector<string>> &tree) {
 		}
 	}
 
-	cout << "set" << endl;
 	for (auto now : addNumbers) {
-		cout << now.first  << " " << now.second << endl;
 		add(tree, now.first, now.second);
 	}
-	cout << endl << endl;
 	
 }
 
 void alg(vector<node> graf) {
-	//vector<node> tree = {};
+	
 	
 	vector<vector<string>> tree;
 	int cou = 0, numberInSetOfConnectedEdges = 0;
@@ -174,17 +166,16 @@ void alg(vector<node> graf) {
 	cout << endl;
 	
 	int mas=0;
-		for (int j = 0; j < tree[0].size()-1; j+=2) {
-			//cout << tree[0][j] << " " << tree[0][j+1] << endl;
-			for (auto now : graf) {
-				if ((now.firstNode == tree[0][j] && now.secondNode == tree[0][j + 1]) || (now.firstNode == tree[0][j+1] && now.secondNode == tree[0][j])) {
-					cout << now.firstNode << " " <<  now.secondNode << endl;
-					mas += now.weight;
-				}
+	for (int j = 0; j < tree[0].size()-1; j+=2) {;
+		for (auto now : graf) {
+			if ((now.firstNode == tree[0][j] && now.secondNode == tree[0][j + 1]) || (now.firstNode == tree[0][j+1] && now.secondNode == tree[0][j])) {
+				cout << now.firstNode << " " <<  now.secondNode << endl;
+				mas += now.weight;
 			}
 		}
-		cout << mas;
-		cout << endl;
+	}
+	cout << mas;
+	cout << endl;
 	
 	
 	
@@ -197,17 +188,8 @@ int main()
 {
 	vector<node> graf = {};
 	input(graf);
-	for (auto now : graf) {
-		cout << now.firstNode << " " << now.secondNode << " " << now.weight << endl;
-	}
-
+	
 	quickSortForGraf(graf, 0, graf.size() - 1);
-
-	cout << endl;
-
-	for (auto now : graf) {
-		cout << now.firstNode << " " << now.secondNode << " " << now.weight << endl;
-	}
 
 	
 	alg(graf);
