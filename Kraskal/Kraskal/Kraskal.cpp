@@ -115,14 +115,14 @@ int cycleCheck(vector<node> graf, vector<vector<string>> tree, node rib) {
 }
 
 
-void add(vector<vector<string>> &tree, int first, int second) {
+void add(vector<vector<string>> &tree, int first, int second) {// соединяет пересекающиеся множества
 	for (int i = 0; i < tree[second].size(); i++) {
 		tree[first].push_back(tree[second][i]);
 	}
 	tree[second].clear();
 }
 
-void cheak(vector<vector<string>> &tree) {
+void cheak(vector<vector<string>> &tree) {// проверяет появились ли пересекающиеся множества
 	map<int, int> addNumbers;
 	for (int i = 0; i < tree.size(); i++) {
 		for (int j = i+1; j < tree.size(); j++) {
